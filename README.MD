@@ -9,3 +9,5 @@ To start the project
 
 To run webpack for bundling source files
 - npm run webpack
+
+v. 0.0.1
