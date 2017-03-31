@@ -13,7 +13,7 @@
     "webpack:watch": "webpack --progress --colors --watch",
     "env:test": "set NODE_ENV=test",
     "pretest:unit": "npm run env:test",
-    "test:unit": ".\\node_modules\\.bin\\karma start --single-run",
+    "test:unit": ".\\node_modules\\.bin\\karma run --single-run",
     "test:unit:watch": ".\\node_modules\\.bin\\karma start",
     "jshint": "jshint app/. test/."
   },
