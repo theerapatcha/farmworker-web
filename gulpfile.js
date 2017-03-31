@@ -5,7 +5,7 @@ gulp.task('sonar', function () {
     var options = {
         sonar: {
             host: {
-                url: 'http://localhost:9000'
+                url: 'http://ec2-54-71-204-172.us-west-2.compute.amazonaws.com:9000'
             },
             jdbc: {
                 url: 'jdbc:mysql://localhost:3306/sonar',
