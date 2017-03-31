@@ -1,0 +1,40 @@
+
+        <div class="container">
+            <div>
+                <!--- header of the quiz page that contains information about the quiz --->
+                <div class="page-header">
+                    <h1>{{Quiz.QuizName}}</h1>
+                    <button style="margin-left:1%;" class=" col-md-2 btn btn-danger btn-md pull-right">Exit</button>
+                    <button class=" col-md-2 btn btn-success btn-md pull-right" ng-click="grader()"  >Submit</button>
+                    <p ng-cloak> <Strong>Description: </Strong>{{Quiz.QuizDescription}}</p>
+                    <p ng-cloak> <Strong>This Quiz is related to: </Strong> <a ng-href="#" target="_blank">{{Quiz.RelatedSource}}</a></p>
+                    <p ng-cloak> <strong>Number of Questions: </strong> {{(Quiz.Scale)/10}}</p>
+                    
+                </div>
+                
+                <!--- Displaying the grade --->
+                <div ng-hide="gradeVisible" ng-class="gradeClass">
+                    <h3>Your grade for this quiz is <strong>{{Score}} / {{Quiz.Scale}}</strong></h3>
+                    <p style="font-weight:400;">{{GradeMessage}}</p>
+                </div>
+                
+                <!---- End of grade display --->
+                
+                <!---Generating the quiz Questions --->
+                <ol style="font-weight: bold;">
+                    <li ng-repeat="Question in Quiz.QuizQuestions">
+                        <form>
+                        <label ng-class="Question.Correct" >{{Question.Question}}</label>
+                        <div style="margin-left:2%;" class="radio" ng-repeat="Answers in Question.QuizAnswers">
+                            <label><input type="radio" ng-model="Question.Selected" name="{{Question.QuestionID}}" value="{{Answers.Answer}}">{{Answers.Answer}}</label>
+                        </div>
+                        </form>
+                    </li>
+                </ol>
+                <!--End of generating the questions -->
+
+            </div>
+        </div>
+    
+
+

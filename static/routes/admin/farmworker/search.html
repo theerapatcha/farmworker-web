@@ -1,0 +1,48 @@
+<div class="row ">
+	<div class="col-md-offset-3 col-md-6 text-center">
+		<h3>Search Farmworkers</h3>
+	</div>
+</div>
+<div class="row" ng-hide="$ctrl.isSearched">
+	 <div class="form-group col-md-offset-4 col-md-4">
+        <label for="searchEmailInput" translate="admin.farmworker.search_email_label"></label>
+        <input name="searchEmailInput" type="text" class="form-control" ng-model="$ctrl.search.email" id="searchEmailInput">
+    </div>
+     <div class="form-group col-md-offset-4 col-md-4">
+        <label for="searchPhoneInput" translate="admin.farmworker.search_phone_label"></label>
+        <input name="searchPhoneInput" type="text" class="form-control" ng-model="$ctrl.search.phone" id="searchPhoneInput">
+    </div>
+     <div class="form-group col-md-offset-4 col-md-4">
+        <label for="searchNameInput" translate="admin.farmworker.search_name_label"></label>
+        <input name="searchNameInput" type="text" class="form-control" ng-model="$ctrl.search.name" id="searchNameInput">
+    </div>
+    <br/>
+    <div class="form-group col-xs-offset-5 col-xs-2 text-center">
+            <button class="btn btn-success" ng-click="$ctrl.doSearch()" translate="admin.farmworker.btn_search"/>
+            <button class="btn btn-success" ng-click="$ctrl.toggleFarmworkerAdd()" translate="admin.farmworker.btn_search"/>
+    </div>
+</div>
+<div class="row" ng-hide="!$ctrl.isSearched">
+    <div class="form-horizontal  panel panel-default text-center">
+        <label class=" control-label" >Search by [
+            Email: <span>  {{ $ctrl.search.email || '-' }}</span>
+            Phone: <span>  {{ $ctrl.search.phone || '-' }}</span>
+            Name: <span>{{ $ctrl.search.name || '-' }}</span>
+        ]
+        </label>
+        <button class="btn btn-sm btn-primary" ng-click="$ctrl.toggleSearchResult()">Search Again</button>
+    </div>
+    <table ng-table="$ctrl.tableParams" class="table" show-filter="false">
+        <tr ng-repeat="user in $data">
+            <td title="'Phone'" filter="{ UserPhoneNumber: 'text'}" sortable="'UserPhoneNumber'">
+                {{user.UserPhoneNumber}}</td>
+            <td title="'Name'" filter="{ UserFirstName: 'text'}" sortable="'UserFirstName'">
+                {{user.UserName}} {{user.UserLastName}}</td>
+             <td title="'Email'" filter="{ UserEmail: 'text'}" sortable="'UserEmail'">
+                {{user.UserEmail}}</td>
+            <td title="'Registered Farm'" filter="{ 'CurrentFarm.FarmName': 'text'}" sortable="'CurrentFarm.FarmName'">
+                {{user.CurrentFarm.FarmName}}</td>
+        </tr>
+    </table>
+</div>
+

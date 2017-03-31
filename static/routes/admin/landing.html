@@ -1,0 +1,39 @@
+<div class="row">
+	<form class="form-horizontal">
+		<div class="col-md-12">
+		 	<section class="system-info">
+		 		<h2><b>Welcome! {{$ctrl.credential.User.UserName}} {{$ctrl.credential.User.UserLastName}}</b></h2>
+		 		<div class="row" style="padding-left:10px">
+		 			<div class="col-xs-12">
+				 		<h4><label class="control-label" translate="admin.landing.farmworker_count_label"></label> : {{$ctrl.farmworkerCount}}</h4>
+				 	</div>
+				 	<div class="col-xs-12">
+				 		<h4><label class="control-label" translate="admin.landing.farm_count_label"></label> : {{$ctrl.farmCount}} </h4>
+				 	</div>
+				 	<div class="col-xs-12">
+			 			<h4><label class="control-label" translate="admin.landing.video_count_label"></label> : {{$ctrl.videoCount}} </h4>
+			 		</div>
+                     <div class="col-xs-12">
+			 			<h4><label class="control-label" translate="admin.landing.document_count_label"></label> : {{$ctrl.documentCount}} </h4>
+			 		</div>
+                     <div class="col-xs-12">
+			 			<h4><label class="control-label" translate="admin.landing.quiz_count_label"></label> : {{$ctrl.quizCount}} </h4>
+			 		</div>
+			 		<div class="col-xs-12">
+			 			<h2 class="text-center">78 &#8457;</h2> 
+			 			<hr/> 	
+			 		</div>
+
+			 		<div class="col-xs-12">
+						<label class="control-label" translate="profile.view.completed_quiz_label"></label> : 
+						0
+					</div>	
+					<div class="col-xs-12">
+						<label class="control-label" translate="profile.view.completed_edu_content_label"></label> : 
+						0
+					</div>	
+				</div>
+		 	</section>
+		</div>
+	</form>
+</div>
