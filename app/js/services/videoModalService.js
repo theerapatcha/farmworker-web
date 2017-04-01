@@ -10,8 +10,8 @@
 				}
 			}).then(function(modal) {
 	            modal.element.modal();
-	            modal.close.then(function(result) {
-	                $scope.message = "You said " + result;
+	            modal.close.then(function() {
+	                //$scope.message = "You said " + result;
 	            });
 	        });;
 		}
