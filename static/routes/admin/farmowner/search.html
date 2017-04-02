@@ -17,9 +17,9 @@
         <input name="searchNameInput" type="text" class="form-control" ng-model="$ctrl.search.name" id="searchNameInput">
     </div>
     <br/>
-    <div class="form-group col-xs-offset-5 col-xs-2 text-center">
+    <div class="form-group col-xs-offset-4 col-xs-4 text-center">
             <button class="btn btn-success" ng-click="$ctrl.doSearch()" translate="admin.farmowner.btn_search"/>
-            <button class="btn btn-success" ng-click="$ctrl.toggleFarmownerAdd()" translate="admin.farmowner.btn_search"/>
+            <button class="btn btn-primary" ng-click="$ctrl.toggleSearchResult()" ng-if="$ctrl.farmowners.length > 0" translate="admin.farmowner.btn_back_to_result"/>
     </div>
 </div>
 <div class="row" ng-hide="!$ctrl.isSearched">

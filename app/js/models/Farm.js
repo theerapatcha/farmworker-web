@@ -14,9 +14,15 @@
 			this.FarmTemperatureMin = json.FarmTemperatureMin;
 			this.FarmTemperatureMax = json.FarmTemperatureMax;
 			this.IsActive = json.IsActive;
-			this.FarmOwner = json.FarmOwner;
+			this.FarmOwners = json.FarmOwners;
 			this.NumberOfFarmWorkers = json.NumberOfFarmWorkers;	
-		}
+
+			Object.defineProperty(this, 'FarmOwnersName', { 
+                                get: () => { 
+                                        return this.FarmOwners.map(x=> x.UserName + " " + x.UserLastName).join(", ");
+                                } 
+                        });
+			}
 		return Farm;
 	}
 	angular.module("angularApp.models").factory("Farm", FarmFactory);

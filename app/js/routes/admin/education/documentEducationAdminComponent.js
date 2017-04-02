@@ -1,8 +1,8 @@
 (function() {
-    function documentEducationAdminController($scope, educationService) {
+    function documentEducationAdminController($scope, educationService, Document) {
         var self = this;
         this.documentList = [];
-        
+        self.isUpdate = false;
         self.$onInit = function(){
         	self.initComponent();
         };
@@ -19,6 +19,39 @@
                 self.initComponent();
             });
         };
+        self.toggleUpdateDocument = function(document) {
+            self.isUpdate = true;
+            self.newDocument = angular.copy(document);
+        }
+        self.doUpdate = function(){
+            educationService.updateDocument(self.newDocument).then((updatedDocument) => {
+                var index = self.documentList.findIndex(x => x.IDEducationalContent === updatedDocument.IDEducationalContent);
+                self.documentList[index] = updatedDocument;
+                self.newDocument = new Document();
+                self.isUpdate = false;
+            });
+            
+        }
+        self.doDisableDocument = function(document){
+            var toBeDeleteDocument = angular.copy(document);
+            toBeDeleteDocument.IsActive = 0;
+            educationService.updateDocument(toBeDeleteDocument).then((updatedDocument) => {
+                var index = self.documentList.findIndex(x => x.IDEducationalContent === updatedDocument.IDEducationalContent);
+                self.documentList[index] = updatedDocument;
+            });   
+        }
+        self.doEnableDocument = function(document){
+            var toBeDeleteDocument = angular.copy(document);
+            toBeDeleteDocument.IsActive = 1;
+            educationService.updateDocument(toBeDeleteDocument).then((updatedDocument) => {
+                var index = self.documentList.findIndex(x => x.IDEducationalContent === updatedDocument.IDEducationalContent);
+                self.documentList[index] = updatedDocument;
+            });   
+        }
+        self.doCancelUpdate = function(){
+            self.isUpdate = false;
+            self.newDocument = new Document();
+        }
         
     }
     angular.module("angularApp.routes").component("documentEducationAdmin", {

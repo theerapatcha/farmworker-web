@@ -1,5 +1,5 @@
 (function(){
-        function UserFactory(UserFarm){
+        function UserFactory(UserFarm, UserCommunicationPreference){
                 function User(obj = {}){
                         var json = obj ? obj : {};
                         this.UserID = json.UserID;
@@ -17,7 +17,13 @@
                         this.UserFarmID = json.UserFarmID;
                         this.IsActive = json.IsActive;
                         this.UserFarms = json.UserFarms ? json.UserFarms.map(x => new UserFarm(x)) : [];
-                        this.CurrentFarm = json.CurrentFarm;
+                        this.UserCommunicationPreferences = json.UserCommunicationPreferences ? json.UserCommunicationPreferences.map(x => new UserCommunicationPreference(x)) : [];
+                        Object.defineProperty(this, 'CurrentFarm', { 
+                                get: () => { 
+                                        var latestFarm = this.UserFarms.find((x) => x.IsLatest === 1);
+                                        return latestFarm ? latestFarm.Farm : undefined;
+                                } 
+                        });
                 }
                 return User;
         }

@@ -25,10 +25,17 @@
 	    <li class="list-group-item" ng-repeat="document in $ctrl.displayedDocumentList">
 	    	<div class="row">
 		    	<div class="col-xs-8">
-		    	<p><a ng-click="$ctrl.openDocument(document)" ng-href="{{document.LinkEducationalContent}}" target="_blank">{{document.DescriptionEducationalContent}}</a></p>
+						<p>
+							<a ng-click="$ctrl.openDocument(document)" ng-href="{{document.LinkEducationalContent}}" target="_blank">{{document.DescriptionEducationalContent}}</a>
+							<div>
+								<span class="label label-info">Added: {{document.DateEducationalContentCreated | date : 'MM/dd/yyyy'}}
+								</span>
+							</div>
+						</p>
+						
 		   		</div>
-		   		<button type="button" class="col-xs-3 btn" ng-class="document.IsCompleted ? 'btn-success' : 'btn-danger'">
-		   		{{ document.IsCompleted ? 'Completed' : 'Not Completed' }}
+		   		<button type="button" class="col-xs-3 btn" ng-class="$ctrl.checkIsViewed(document.IDEducationalContent) ? 'btn-success' : 'btn-danger'">
+		   		{{ $ctrl.checkIsViewed(document.IDEducationalContent) ? 'Viewed' : 'Not Viewed' }}
 		   		</button>
 	   		</div>
 	    </li>

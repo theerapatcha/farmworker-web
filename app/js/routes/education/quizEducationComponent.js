@@ -6,7 +6,6 @@
         this.searchKeyword = "";
         self.$onInit = function(){
         	educationService.listQuizzes().then(function(quizzes){
-                console.log(quizzes);
                 self.quizList = quizzes;
                 self.displayedQuizList = self.quizList;    
             });

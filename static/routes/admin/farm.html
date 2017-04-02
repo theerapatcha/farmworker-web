@@ -16,8 +16,8 @@
     <th>Delete</th>
   </tr>
   <tr ng-repeat="farm in farms">
-    <td>{{ farm.FarmName }} - {{$index}}</td>
-    <td>{{ farm.FarmOwner }}</td>
+    <td>{{ farm.FarmName }}</td>
+    <td>{{ farm.FarmOwnersName }}</td>
     <td>{{ farm.FarmCity }}</td>
     <td>{{ farm.FarmState }}</td>
     <td>{{ farm.NumberOfFarmWorkers }}</td>
@@ -45,9 +45,9 @@
     <label>Farm Name:</label>
     <input class="w3-input w3-border" type="text" ng-model="FarmName" ng-disabled="!edit" placeholder="Farm Name">
   <br>
-    <label>Farm Owner:</label>
+    <!--<label>Farm Owner:</label>
     <input class="w3-input w3-border" type="text" ng-model="FarmOwner" ng-disabled="!edit" placeholder="Farm Owners Name">
-  <br>
+  <br>-->
     <label>Farm Address:</label>
     <input class="w3-input w3-border" type="text" ng-model="FarmHouseNumberStreetAddress" ng-disabled="!edit" placeholder="Farm Address">
   <br>

@@ -6,12 +6,12 @@
 			if(!farmsPromiseCache){
 				farmsPromiseCache = $http.get(API_CONSTANT.API_HOST + API_CONSTANT.API.ListFarm);
 			}
-			return farmsPromiseCache.then(
-					(resp) => {
-						farmsPromiseCache = undefined;	
-						return resp.data.map(farm => new Farm(farm));
-					} 
-			);
+			return farmsPromiseCache
+			.then((resp) =>  resp.data.map(farm => new Farm(farm)))
+			.finally(() => {
+				farmsPromiseCache = undefined;	
+			});
+
 		}
 		self.addFarm = function(farm){
 			return $http.post(API_CONSTANT.API_HOST + API_CONSTANT.API.InsertFarm, farm);
@@ -21,12 +21,7 @@
 			return $http.post(API_CONSTANT.API_HOST + API_CONSTANT.API.UpdateFarm, farm);
 		}
 		self.deleteFarm = function(FarmID){
-			return $http.delete(API_CONSTANT.API_HOST + API_CONSTANT.API.DeleteFarm, {
-				params:{
-					_parameterName: 'FarmID',
-					_parameterData: FarmID
-				}	
-			});
+			return $http.post(API_CONSTANT.API_HOST + API_CONSTANT.API.DeleteFarm, { FarmID: FarmID });
 
 			console.log(FarmID);
 		}

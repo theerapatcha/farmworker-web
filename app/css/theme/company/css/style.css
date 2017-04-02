@@ -42,7 +42,7 @@ a {
 }
 a:hover {
 	text-decoration: none;
-	color:#eee;	
+	color:#999;	
 	}
 
 .text-center h2 {
@@ -1116,7 +1116,6 @@ ul.sidebar-gallery {
 
 .form-group .form-control {
   padding: 7px 12px;
-  border-color:#f2f2f2;
   box-shadow: none;
 }
 

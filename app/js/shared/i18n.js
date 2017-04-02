@@ -80,11 +80,28 @@ function translateProvider($translateProvider){
 				}
 			},
 			admin:{
+				landing:{
+					farmworker_count_label: "Number of Farmworkers",
+					farm_count_label: "Number of Farms",
+					video_count_label: "Number of Videos",
+					document_count_label: "Number of Documents",
+					quiz_count_label: "Number of Quizs"
+				},
 				farmworker:{
 					search_email_label: "Search by Email",
 					search_phone_label: "Search by Phone Number",
 					search_name_label: "Search by Name",
 					btn_search: "Search",
+					btn_back_to_result: "Back to Result",
+					
+				},
+				farmowner:{
+					search_email_label: "Search by Email",
+					search_phone_label: "Search by Phone Number",
+					search_name_label: "Search by Name",
+					btn_search: "Search",
+					btn_back_to_result: "Back to Result",
+					
 				},
 				farm:{
 					owner_label: "Farm Owner Name",
@@ -105,15 +122,21 @@ function translateProvider($translateProvider){
 						btn_add: "Add",
 						btn_edit: "Edit",
 						btn_delete: "Delete",
-
+						btn_disable: "Disable",
+						btn_enable: "Enable",
+						btn_update: "Update",
+						btn_cancel_update: "Cancel"
 					},
 					video:{
 						upload_title: "Upload New Video",
 						existing_title: "Existing Videos",
 						btn_add: "Add",
 						btn_edit: "Edit",
-						btn_delete: "Delete"
-
+						btn_delete: "Delete",
+						btn_disable: "Disable",
+						btn_enable: "Enable",
+						btn_update: "Update",
+						btn_cancel_update: "Cancel"
 					},
 					quiz:{
 						upload_title: "Upload New Quiz",
@@ -122,7 +145,8 @@ function translateProvider($translateProvider){
 						btn_create_quiz: "Create Quiz",
 						btn_edit: "Edit",
 						btn_delete: "Delete",
-
+						btn_update: "Update",
+						btn_cancel_update: "Cancel"
 					}
 				}
 			}

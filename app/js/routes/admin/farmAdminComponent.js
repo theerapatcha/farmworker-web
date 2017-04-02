@@ -8,6 +8,7 @@
         }
         this.initComponent = function(){
             farmService.listFarms().then(function(farms){
+                console.log(farms);
                 $scope.farms = farms;
             });
         }
@@ -23,7 +24,7 @@
         $scope.fnum = '';
         
         /// make them as defult 
-        $scope.FarmLatitude = '33.983681'; //Dummy Data
+        $scope.FarmLatitute = '33.983681'; //Dummy Data
         $scope.FarmLongitude = '-118.338542'; //Dummy Data
         $scope.FarmTemperatureMin = '1'; //Dummy Data
         $scope.FarmTemperatureMax = '100'; //Dummy Data
@@ -59,7 +60,7 @@
                 $scope.FarmState = '';
                 $scope.FarmCountry = '';
                 $scope.FarmZipCode = '';
-                // $scope.FarmLatitude = '';
+                // $scope.FarmLatitute = '';
                 // $scope.FarmLongitude = '';
                 // $scope.FarmTemperatureMin = '';
                 // $scope.FarmTemperatureMax = '';
@@ -75,7 +76,7 @@
                         'FarmState': $scope.FarmState,
                         'FarmCountry': $scope.FarmCountry,
                         'FarmZipCode': $scope.FarmZipCode,
-                        'FarmLatitude': $scope.FarmLatitude , 
+                        'FarmLatitute': $scope.FarmLatitute , 
                         'FarmLongitude': $scope.FarmLongitude , 
                         'FarmTemperatureMin': $scope.FarmTemperatureMin , 
                         'FarmTemperatureMax':  $scope.FarmTemperatureMax , 
@@ -87,7 +88,7 @@
 									function(resp){ 
 										console.log(resp.data);
 										
-										if(resp.data != 'Farm Successfully Added'){
+										if(typeof resp.data === 'string'){
 											
 											$scope.errorMessages = false;
 											$scope.messages  = resp.data.toString().split("<br>");
@@ -143,7 +144,7 @@
                         'FarmState': $scope.FarmState,
                         'FarmCountry': $scope.FarmCountry,
                         'FarmZipCode': $scope.FarmZipCode,
-                        'FarmLatitude': $scope.FarmLatitude,
+                        'FarmLatitute': $scope.FarmLatitute,
                         'FarmLongitude': $scope.FarmLongitude,
                         'FarmTemperatureMin': $scope.FarmTemperatureMin,
                         'FarmTemperatureMax': $scope.FarmTemperatureMax,
@@ -151,10 +152,7 @@
                         'FarmWeather': $scope.FarmWeather
                     }).then(
 									function(resp){ 
-										console.log(resp.data);
-										
-										if(resp.data != 'Farm Updated'){
-											
+										if(typeof resp.data === 'string'){
 											$scope.errorMessages = false;
 											$scope.messages  = resp.data.toString().split("<br>");
 										}

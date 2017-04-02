@@ -4,10 +4,10 @@
 		this.mode = 'Login';
 		this.doLogin = function(){
 			userService.login(this.username,this.password).then(function(user){
-				if(user.UserSecurityRole.UserSecurityRoleName === 'admin'){
+				if(user.User.UserType === 'Admin'){
 					self.$router.navigate(['Main','Admin']);
 				}else{
-					self.$router.navigate(['Main','Profile']);
+					self.$router.navigate(['Main','MainLanding']);
 				}
 			});
 		};

@@ -1,0 +1,40 @@
+<div>
+    <h3><b>Update Your Notification Preferences</b></h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Notification Type</th>
+                <th>Frequency</th>
+                <th>Language</th>
+            </tr>
+        </thead>
+        <tbody class="form-group">
+            <tr ng-repeat="preference in $ctrl.currentPreferences">
+                <td><label class="form-control-static">{{preference.UserCommunicationPreferenceNotificationType}}</label></td>
+                <td>
+                    <select
+                        class="form-control"
+                        ng-model="preference.UserCommunicationPreferenceFrequency"
+                        ng-options="frequency for frequency in $ctrl.frequencies"
+                        required
+                    >
+                    </select>
+                </td>
+                <td>
+                    <select
+                        class="form-control"
+                        ng-model="preference.IDUserCommunicationPreferenceLanguage"
+                        ng-options="language for language in $ctrl.languages"
+                        required
+                    >
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <button class="btn btn-success" ng-click="$ctrl.doUpdate()" translate="profile.update_farm.btn_update"/>
+        </div>
+    </div>
+</div>

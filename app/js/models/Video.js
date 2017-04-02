@@ -14,7 +14,7 @@
 			this.DescriptionEducationalContent = json.DescriptionEducationalContent;
 			this.DateEducationalContentCreated = json.DateEducationalContentCreated;
 			this.IsActive = json.IsActive;
-			this.YoutubeId = youtube_parser(this.LinkEducationalContent);
+			this.YoutubeId = youtube_parser(this.LinkEducationalContent || '');
 		}
 		return Video;
 	}

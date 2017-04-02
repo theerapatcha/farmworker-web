@@ -1,9 +1,9 @@
 <div class="row">
     <form name="myForm" novalidate>
         <div class="col-md-6 margin-base-vertical">
-            <h3><b>Update Profile</b></h3>
+            <h3><b>Update Your Profile</b></h3>
             <div class="row align-middle">
-            
+
                 <div class="form-group col-md-12">
                     <label for="fnameInput" translate="profile.update.fname_label">First Name <span class="required">*</span></label>
                     <input name="fnameInput" type="text" class="form-control" id="emailInput" ng-model="$ctrl.credential.User.UserName" required>
@@ -16,84 +16,63 @@
                 </div>
                 <div class="form-group col-md-12">
                     <label for="genderInput" translate="profile.update.gender_label">Gender <span class="required">*</span></label>
-                    <select name="genderInput" type="text" class="form-control" id="genderInput" ng-model="$ctrl.credential.User.UserGender" required>
+                    <select name="genderInput" type="text" class="form-control" id="genderInput" ng-model="$ctrl.credential.User.UserGender"
+                        required>
                         <option value="M">Male</option>
                         <option value="F">Female</option>
                     </select>
                     <span class="error-msg" ng-show="myForm.genderInput.$touched && myForm.genderInput.$error.required" translate="profile.update.gender_required">Gender is required.</span>
                 </div>
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-6">
                     <label for="weightInput" translate="profile.update.weight_label">Weight</label>
                     <input name="weightInput" type="text" class="form-control" id="weightInput" ng-model="$ctrl.credential.User.UserWeight">
                 </div>
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-6">
                     <label for="heightInput" translate="profile.update.height_label">Height</label>
                     <input name="heightInput" type="text" class="form-control" id="heightInput" ng-model="$ctrl.credential.User.UserHeight">
                 </div>
                 <div class="form-group col-md-12">
-                        <label for="birthdateInput" translate="profile.update.birthdate_label">Phone <span class="required">*</span></label>
-                        <input name="birthdateInput" type="text" class="form-control" id="birthdateInput" ng-model="$ctrl.credential.User.UserDateOfBirth">
+                    <label for="birthdateInput" translate="profile.update.birthdate_label">Phone <span class="required">*</span></label>
+                    <input name="birthdateInput" type="text" class="form-control" id="birthdateInput" ng-model="$ctrl.credential.User.UserDateOfBirth">
                 </div>
-                <div class="form-group col-md-12">
-                        <label for="phoneInput" translate="profile.update.phone_label">Phone <span class="required">*</span></label>
-                        <input name="phoneInput" type="text" class="form-control" id="phoneInput" ng-model="$ctrl.credential.User.UserPhoneNumber" required>
-                        <span class="error-msg" ng-show="myForm.phoneInput.$touched &&myForm.phoneInput.$error.required" translate="profile.update.phone_required">Phone is required.</span>
-                </div>
-            </div>    
+            </div>
         </div>
         <div class="col-md-6 margin-base-vertical">
-             <h3><b>&nbsp;</b></h3>
+            <h3><b>&nbsp;</b></h3>
             <div class="row align-middle">
-                    <div class="form-group col-md-12">
-                        <label for="emailInput" translate="profile.update.email_label">Email <span class="required">*</span></label>
-                        <input name="emailInput" type="text" class="form-control" id="emailInput" ng-model="$ctrl.credential.User.UserEmail" required>
-                        <span class="error-msg" ng-show="myForm.emailInput.$touched &&myForm.emailInput.$error.required" translate="profile.update.email_required">Email is required.</span>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label for="passwordInput" translate="profile.update.password_label">Password <span class="required">*</span></label>
-                        <input name="passwordInput" type="password" class="form-control" id="passwordInput" ng-model="$ctrl.credential.Password" required>
-                        <span class="error-msg" ng-show="myForm.passwordInput.$touched && myForm.passwordInput.$error.required" translate="profile.update.password_required">Password is required.</span>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label for="confirmPasswordInput" translate="profile.update.confirm_password_label">Password <span class="required">*</span></label>
-                        <input name="confirmPasswordInput" type="password" class="form-control" id="confirmPasswordInput" ng-model="$ctrl.credential.ConfirmPassword" required>
-                        <span class="error-msg" ng-show="myForm.confirmPasswordInput.$touched && myForm.confirmPasswordInput.$error.required" translate="profile.update.confirm_password_required">Password is required.</span>
-                        <span class="error-msg" ng-show="myForm.confirmPasswordInput.$touched && myForm.confirmPasswordInput.$error.mismatched" translate="profile.update.confirm_password_mismatched">Password is mismatched.</span>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label for="farmInput" translate="profile.update.farm_select_label">Choose Farm <span class="required">*</span></label>
-                        <!-- <select name="farmInput" type="text" class="form-control" id="farmInput" required>
-                            <option value="1">John Marvelous Farm</option>
-                            <option value="2">Old Trafform Pig's Farm</option>
-                            <option value="3">Not the East Farm</option>
-                        </select> -->
-                        <farm-select-list name="farmInput" id="farmInput" ng-change="$ctrl.changeFarm(this)" ng-model="$ctrl.selectedFarmID">{{$ctrl.credential.User.UserFarms[0].FarmID}}
-                        <span class="error-msg" ng-show="myForm.farmInput.$touched && myForm.farmInput.$error.required" translate="profile.update.farm_select_required">Farm must be chosen.</span>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label for="notiPrefInput" translate="profile.update.noti_pref_label">Notification Preference </label>
-                        <select name="notiPrefInput" type="text" class="form-control" id="notiPrefInput" required>
-                            <option value="h">Hourly</option>
-                            <option value="d">Daily</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label for="schedulePrefInput" translate="profile.update.schedule_pref_label">Scheduling Preference </label>
-                        <select name="schedulePrefInput" type="text" class="form-control" id="schedulePrefInput" required>
-                            <option value="h">Hourly</option>
-                            <option value="d">Daily</option>
-                        </select>
-                    </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6 text-center">
-                    <button class="btn btn-success" ng-click="$ctrl.doUpdate()" translate="profile.update.btn_update"/>
+                <div class="form-group col-md-12">
+                    <label for="phoneInput" translate="profile.update.phone_label">Phone <span class="required">*</span></label>
+                    <input name="phoneInput" type="text" class="form-control" id="phoneInput" ng-model="$ctrl.credential.User.UserPhoneNumber"
+                        required>
+                    <span class="error-msg" ng-show="myForm.phoneInput.$touched &&myForm.phoneInput.$error.required" translate="profile.update.phone_required">Phone is required.</span>
                 </div>
-                <div class="col-xs-6 text-center">
-                    <button class="btn btn-danger" ng-click="$ctrl.doCancel()" translate="profile.update.btn_cancel"/>
+                <div class="form-group col-md-12">
+                    <label for="emailInput" translate="profile.update.email_label">Email <span class="required">*</span></label>
+                    <input name="emailInput" type="text" class="form-control" id="emailInput" ng-model="$ctrl.credential.User.UserEmail" required>
+                    <span class="error-msg" ng-show="myForm.emailInput.$touched &&myForm.emailInput.$error.required" translate="profile.update.email_required">Email is required.</span>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="passwordInput" translate="profile.update.password_label">Password <span class="required">*</span></label>
+                    <input name="passwordInput" type="password" class="form-control" id="passwordInput" ng-model="$ctrl.credential.Password"
+                        required>
+                    <span class="error-msg" ng-show="myForm.passwordInput.$touched && myForm.passwordInput.$error.required" translate="profile.update.password_required">Password is required.</span>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="confirmPasswordInput" translate="profile.update.confirm_password_label">Password <span class="required">*</span></label>
+                    <input name="confirmPasswordInput" type="password" class="form-control" id="confirmPasswordInput" ng-model="$ctrl.credential.ConfirmPassword"
+                        required>
+                    <span class="error-msg" ng-show="myForm.confirmPasswordInput.$touched && myForm.confirmPasswordInput.$error.required" translate="profile.update.confirm_password_required">Password is required.</span>
+                    <span class="error-msg" ng-show="myForm.confirmPasswordInput.$touched && myForm.confirmPasswordInput.$error.mismatched" translate="profile.update.confirm_password_mismatched">Password is mismatched.</span>
                 </div>
             </div>
-            
+        </div>
+        <div class="row col-md-12">
+            <div class="col-xs-6 text-center">
+                <button class="btn btn-success" ng-click="$ctrl.doUpdate()" translate="profile.update.btn_update" />
+            </div>
+            <div class="col-xs-6 text-center">
+                <button class="btn btn-danger" ng-click="$ctrl.doCancel()" translate="profile.update.btn_cancel" />
+            </div>
         </div>
     </form>
 </div>

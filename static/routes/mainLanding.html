@@ -10,8 +10,6 @@
 				 	<div class="col-xs-12">
 				 		<h4><label class="control-label" translate="profile.view.farm_address_label"></label> : {{$ctrl.credential.User.CurrentFarm.FarmHouseNumberStreetAddress }}  {{$ctrl.credential.User.CurrentFarm.FarmState }}, {{$ctrl.credential.User.CurrentFarm.FarmCity }}, {{$ctrl.credential.User.CurrentFarm.FarmCountry }} {{$ctrl.credential.User.CurrentFarm.FarmZipCode }} </h4>
 				 	</div>
-					 <h3 class="col-xs-2 text-right">&nbsp;<a ng-link=['UpdateFarm']><span class="glyphicon glyphicon-edit"></span></a></h3>
-				 	<br/>
 				 	<div class="col-xs-12">
 			 			<h5><label class="control-label" translate="profile.view.farm_temperature_label"></label></h5>
 			 		</div>
@@ -34,7 +32,7 @@
 		<div class="col-md-6 text-bigger">
 			<section class="personal-info">
 				<h3 class="col-xs-10"><b>User Information</b></h3>
-				<h3 class="col-xs-2 text-right">&nbsp;<a ng-link=['UpdateProfile']><span class="glyphicon glyphicon-edit"></span></a></h3>
+				<h3 class="col-xs-2 text-right">&nbsp;<a ng-link=['Profile','UpdateProfile']><span class="glyphicon glyphicon-edit"></span></a></h3>
 				<div class="row align-middle">
 					<div class="col-xs-4 text-right">
 						<label class="control-label" translate="profile.view.phone_label"></label> : 

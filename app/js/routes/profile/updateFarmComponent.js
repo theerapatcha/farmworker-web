@@ -32,13 +32,13 @@
 		}
 		this.doUpdate = function(){
 			var updatedUserFarm = self.currentUserFarms.map(x => ({
-				UserID: x.UserID,
+				UserID: self.credential.UserID,
 				FarmID: x.FarmID,
 				IsLatest: x.IsLatest
 			}));
 			userService.updateUserFarm(updatedUserFarm).then(function(userFarms){
 				self.credential.User.UserFarms = userFarms;
-				self.credential.User.CurrentFarm = userFarms.find(x => x.IsLatest).Farm;
+				//self.credential.User.CurrentFarm = userFarms.find(x => x.IsLatest).Farm;
 			});
 		};
 		this.changeFarm = function(a){

@@ -18,12 +18,16 @@
 			$router: '<' 
 		},
 		$routeConfig : [
-
+		{
+			path: '/',
+			component: 'mainLanding',
+			name: 'MainLanding',
+            useAsDefault: true
+		},
 		{
             path: '/profile/...',
             component: 'profile',
-            name: 'Profile',
-            useAsDefault: true
+			name: 'Profile',
         },
         {
             path: '/education/...',
